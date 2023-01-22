@@ -26,6 +26,30 @@
         };
     };
 
+    macros {
+        ptr: ptr {
+            label = "->";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp MINUS>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp DOT>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+        arrow_op: arrow_op {
+            label = "=>";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp EQUAL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp DOT>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -59,8 +83,8 @@
         //│ ESC      │  COLON   │  SEMI    │          │          │   │          │          │          │          │          │
            &kp ESC     &kp COLON  &kp SEMI   &trans     &trans         &trans     &trans      &trans      &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ ^        │          │  \       │          │          │   │   LEFT   │   DOWN   │   UP     │ RIGHT    │  $       │
-            &kp CARET  &trans     &kp BSLH    &trans     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DLLR
+        //│ ^        │          │  \       │ =>       │  ->      │   │   LEFT   │   DOWN   │   UP     │ RIGHT    │  $       │
+            &kp CARET  &trans     &kp BSLH   &arrow_op  &ptr         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DLLR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans       &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
@@ -97,7 +121,7 @@
           &bootloader  &trans     &trans     &trans    &bt BT_SEL 1   &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN  &trans &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │ Bright Up│ Bright Dn│          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2   &kp C_BRI_UP &kp C_BRI_DN &trans     &trans     &trans
+            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
