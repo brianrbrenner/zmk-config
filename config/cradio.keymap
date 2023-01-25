@@ -112,6 +112,23 @@
             >;
         };
 
+        tri_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ RESET    │          │          │ QWERTY   │PROFILE 0 │   │Play/pause│ PREV     │ NEXT     │          │  RESET   │
+            &reset     &trans     &trans  &tog QWERTY  &bt BT_SEL 0    &kp K_PP  &kp K_PREV &kp K_NEXT  &trans      &reset
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BOOTLOADER│          │          │          │PROFILE 1 │   │Mute      │ Vol Up   │ Vol Down │          │BOOTLOADER│
+          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1   &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN  &trans &bootloader
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │ CLEAR BT │PROFILE 2 │   │ Bright Up│ Bright Dn│          │          │          │
+            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
         QWERTY {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -129,21 +146,5 @@
             >;
         };
 
-        tri_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │ QWERTY   │PROFILE 0 │   │Play/pause│ PREV     │ NEXT     │          │  RESET   │
-            &reset     &trans     &trans  &tog QWERTY  &bt BT_SEL 0    &kp K_PP  &kp K_PREV &kp K_NEXT  &trans      &reset
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │Mute      │ Vol Up   │ Vol Down │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1   &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN  &trans &bootloader
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │ Bright Up│ Bright Dn│          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
     };
 };
