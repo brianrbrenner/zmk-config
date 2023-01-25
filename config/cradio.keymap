@@ -88,7 +88,7 @@
             &kp CARET  &trans     &kp BSLH   &arrow_op  &ptr         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DLLR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │  QWERTY  │
-            &trans       &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans  &tog 4
+            &trans       &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans      &to 4
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans        &kp ENTER     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -141,7 +141,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &trans      &trans         &trans     &trans
+                                            &kp TAB   &lt 1 SPACE      &kp BSPC    &mo 2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
