@@ -5,14 +5,23 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define QWERTY     0
-#define LOWER      1
-#define RAISE      2
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LALT k1  &ht LGUI k2  &ht LSHFT k3  &ht LCTRL k4
 #define HRMR(k1,k2,k3,k4) &ht RCTRL k1  &ht RSHFT k2  &ht RGUI k3  &ht RALT k4
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp CAPS>;
+        };
+    };
+
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -60,17 +69,17 @@
 
     keymap {
         compatible = "zmk,keymap";
-        QWERTY {
+        DEFAULT {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  ' "     │
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ '"       │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,     SQT)
+        //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │ O        │
+            HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,        O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
+            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &kp TAB   &lt 1 SPACE      &kp BSPC    &mo 2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -129,3 +138,5 @@
         };
     };
 };
+
+
