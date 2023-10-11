@@ -95,8 +95,8 @@
         //│ ^        │          │  \       │ =>       │  ->      │   │   LEFT   │   DOWN   │   UP     │ RIGHT    │  $       │
             &kp CARET  &trans     &kp BSLH   &arrow_op  &ptr         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DLLR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │  QWERTY  │
-            &trans       &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans      &to 4
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans       &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans      &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans        &kp ENTER     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
