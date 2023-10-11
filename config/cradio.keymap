@@ -124,7 +124,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │Play/pause│ PREV     │ NEXT     │          │  RESET   │
-            &reset     &trans     &trans     &trans    &bt BT_SEL 0    &kp K_PP  &kp K_PREV &kp K_NEXT  &trans      &reset
+          &sys_reset     &trans     &trans     &trans    &bt BT_SEL 0    &kp K_PP  &kp K_PREV &kp K_NEXT  &trans   &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │Mute      │ Vol Up   │ Vol Down │          │BOOTLOADER│
           &bootloader  &trans     &trans     &trans    &bt BT_SEL 1   &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN  &trans &bootloader
